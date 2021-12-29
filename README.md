@@ -1,7 +1,5 @@
 # BATTERY NOTIFIER
 
-## Author Fissore Davide
-
 ### Aim of project 
 This project is a battery notifier aiming to protect you battery life.   
 A battery live longer if you keep the battery level between a range of about 15-90%   

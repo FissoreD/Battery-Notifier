@@ -14,11 +14,14 @@ public class GraphicPanel extends JFrame {
   JPanel mainPanel;
   Main m;
   String[] values = new String[] { "Min batt", "Max batt", "Sec" };
+  String[] defaultValues;
   List<JTextField> fields = new ArrayList<>();
 
   GraphicPanel(Main m) {
     this.m = m;
     mainPanel = new JPanel();
+
+    defaultValues = new String[] { m.min + "", m.max + "", m.sec + "" };
 
     mainPanel.add(createLeftPanel1());
     mainPanel.add(createRightPanel());
@@ -32,9 +35,9 @@ public class GraphicPanel extends JFrame {
 
   private JPanel createLeftPanel1() {
     JPanel leftPanel = new JPanel(new GridLayout(3, 2));
-    for (String s : values) {
-      leftPanel.add(new JLabel(s));
-      fields.add(new JTextField());
+    for (int i = 0; i < 3; i++) {
+      leftPanel.add(new JLabel(values[i]));
+      fields.add(new JTextField(defaultValues[i]));
       leftPanel.add(fields.get(fields.size() - 1));
     }
     return leftPanel;

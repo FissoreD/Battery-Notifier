@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class Main {
 
     public int min = 15;
     public int max = 90;
-    public int sec = 5;
+    public int sec = 20;
 
     public static void main(String[] args) {
         Main m = new Main();
@@ -72,7 +73,13 @@ public class Main {
                 }
             }
         } catch (NumberFormatException | IOException e) {
-            e.printStackTrace();
+            File yourFile = new File(pathFile);
+            try {
+                yourFile.createNewFile();
+                setVarsFromFile();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
         }
     }
 

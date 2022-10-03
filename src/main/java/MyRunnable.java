@@ -47,9 +47,9 @@ public class MyRunnable implements Runnable {
       int perc = getPercentage();
       boolean isCharging = isCharging();
       if (perc < m.min && !isCharging)
-        m.trayIcon.sendMsg("Battery less than " + m.min, "Plug the charger");
+        m.trayIcon.sendMsg("Battery is at " + perc, "Plug the charger");
       else if (perc > m.max && isCharging)
-        m.trayIcon.sendMsg("Battery more than " + m.max, "\nUnplug the charger");
+        m.trayIcon.sendMsg("Battery is at " + perc, "\nUnplug the charger");
       try {
         Thread.sleep(m.sec * 1000L);
       } catch (InterruptedException e) {

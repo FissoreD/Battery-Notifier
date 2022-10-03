@@ -10,7 +10,7 @@ public class Tray extends TrayIcon {
   public Tray(Main m, Image img) {
     super(img, "Battery app");
     setImageAutoSize(true);
-    setToolTip("Battey Icon");
+    setToolTip("Battery Icon");
     addMouseListener(new MyMouseInputAdapter(m));
     gp = new GraphicPanel(m);
   }

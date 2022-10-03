@@ -16,7 +16,7 @@ When you launch the jar, an icon will appear in the windows bar, with
 - left mouse click ends the program
 - right mouse click opens a small Frame  
 
-In this Frane you can : 
+In this window you can : 
   - Set the min battery level 
   - Set the max battery level 
   - Set the sec time

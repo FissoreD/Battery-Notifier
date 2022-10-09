@@ -48,7 +48,7 @@ public class Main {
             InputStream stream = getClass().getResourceAsStream("battery1.png");
             assert stream != null;
             ImageIcon image = new ImageIcon(ImageIO.read(stream));
-            System.out.println(image.getImage());
+            // System.out.println(image.getImage());
             trayIcon = new Tray(this, image.getImage());
             try {
                 tray.add(trayIcon);

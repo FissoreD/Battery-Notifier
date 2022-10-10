@@ -6,13 +6,20 @@ import javax.swing.event.MouseInputAdapter;
 
 public class Tray extends TrayIcon {
   GraphicPanel gp;
+  Main m;
 
   public Tray(Main m, Image img) {
     super(img, "Battery app");
     setImageAutoSize(true);
-    setToolTip("Battery Icon");
+    setToolTip("Max : " + m.max + "\nMin : " + m.min + "\nDelay : " + m.sec);
     addMouseListener(new MyMouseInputAdapter(m));
     gp = new GraphicPanel(m);
+    this.m = m;
+  }
+
+  public void setToolTip() {
+    var m = this.m;
+    super.setToolTip("Max : " + m.max + "\nMin : " + m.min + "\nRep : " + m.sec);
   }
 
   public void sendMsg(String... msg) {

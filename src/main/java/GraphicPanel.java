@@ -95,6 +95,7 @@ public class GraphicPanel extends JFrame {
         else if (values[i].toLowerCase().contains("sec"))
           m.sec = giveInt(val, m.sec);
       }
+      m.trayIcon.setToolTip();
       m.getMyRunnable().interrupt();
       m.createNewRunnable();
       m.getMyRunnable().start();
